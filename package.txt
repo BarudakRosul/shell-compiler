@@ -1,0 +1,4 @@
+git
+openssl
+xz-utils
+jq
