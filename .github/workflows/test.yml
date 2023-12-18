@@ -1,0 +1,25 @@
+name: Test
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+permissions: read-all
+
+jobs:
+  build:
+    name: Perform check
+    runs-on: ubuntu-latest
+    if: github.repository == 'BarudakRosul/shell-compiler'
+
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Install package
+      - run: sudo apt-get install $(cat package.txt) -y
+
+      - name: Testing code for encryption
+      - run: bash tests/encryption.test.sh
