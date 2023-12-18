@@ -71,10 +71,10 @@ Untuk menyiapkan Shell Compiler secara lokal, ikuti langkah-langkah instalasi in
      ```
    - Untuk Linux:
      ```shell
-     apt update -y && apt upgrade -y
+     sudo apt-get update -y && sudo apt-get upgrade -y
      ```
      ```shell
-     apt-get install $(cat package.txt) -y
+     sudo apt-get install $(cat package.txt) -y
      ```
 
 4. Jalankan aplikasi:
