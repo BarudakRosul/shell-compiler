@@ -19,7 +19,9 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Install package
-        run: sudo apt-get install $(cat package.txt) -y
+        run: |
+          sudo apt-get update -y && sudo apt-get upgrade -y
+          sudo apt-get install $(cat package.txt) -y
 
       - name: Testing code for encryption
         run: bash tests/encryption.test.sh
