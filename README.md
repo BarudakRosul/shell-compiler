@@ -1,13 +1,16 @@
-# Shell Compiler
-
-&emsp; <img src="https://raw.githubusercontent.com/BarudakRosul/shell-compiler/master/images/logo.svg" alt="Shell Compiler Logo" width="140"/>
-
-[![Release](https://img.shields.io/github/v/tag/BarudakRosul/shell-compiler?label=release)](https://github.com/BarudakRosul/shell-compiler/releases)
-[![License](https://img.shields.io/github/license/BarudakRosul/shell-compiler)](/LICENSE)
-[![Stars](https://img.shields.io/github/stars/BarudakRosul/shell-compiler)](https://github.com/BarudakRosul/shell-compiler/stargazers)
-[![Forks](https://img.shields.io/github/forks/BarudakRosul/shell-compiler)](https://github.com/BarudakRosul/shell-compiler/network/members)
-[![Issues](https://img.shields.io/github/issues/BarudakRosul/shell-compiler)](https://github.com/BarudakRosul/shell-compiler/issues)
-[![Pull Requests](https://img.shields.io/github/issues-pr/BarudakRosul/shell-compiler)](https://github.com/BarudakRosul/shell-compiler/pulls)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/BarudakRosul/shell-compiler/master/images/logo.svg" alt="Shell Compiler Logo" width="140"/>
+  <h1>Shell Compiler</h1>
+  <p><a href="https://github.com/BarudakRosul/shell-compiler/issues/new?assignees=&labels=bug&projects=&template=bug_report.yml">Laporkan Bug</a> · <a href="https://github.com/BarudakRosul/shell-compiler/issues/new?assignees=&labels=enhancement&projects=&template=feature_request.yml">Ajukan Fitur</a> · <a href="https://github.com/BarudakRosul/shell-compiler/discussions/new?category=q-a">Tanya Jawab</a></p>
+  <p>
+    <a href="https://github.com/BarudakRosul/shell-compiler/releases"><img src="https://img.shields.io/github/v/tag/BarudakRosul/shell-compiler?label=release" alt="Release"/></a>
+    <a href="/LICENSE"><img src="https://img.shields.io/github/license/BarudakRosul/shell-compiler" alt="License"/></a>
+    <a href="https://github.com/BarudakRosul/shell-compiler/stargazers"><img src="https://img.shields.io/github/stars/BarudakRosul/shell-compiler" alt="Stars"/></a>
+    <a href="https://github.com/BarudakRosul/shell-compiler/network/members"><img src="https://img.shields.io/github/forks/BarudakRosul/shell-compiler" alt="Forks"/></a>
+    <a href="https://github.com/BarudakRosul/shell-compiler/issues"><img src="https://img.shields.io/github/issues/BarudakRosul/shell-compiler" alt="Issues"/></a>
+    <a href="https://github.com/BarudakRosul/shell-compiler/pulls"><img src="https://img.shields.io/github/issues-pr/BarudakRosul/shell-compiler" alt="Pull Requests"/></a>
+  </p>
+</div>
 
 ## Daftar Isi
 
