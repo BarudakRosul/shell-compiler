@@ -93,7 +93,7 @@ Untuk memulai menggunakan Shell Compiler untuk enkripsi file, ikuti langkah-lang
 
 1. Simpan file yang akan dienskripsi ke folder `file`.
 2. Jalankan file `shell-compiler.sh`.
-3. Pilih jenis Shell file yang akan dienskripsi (`bash`, `sh`, `zsh`, `ksh`, atau `mksh` dan klik Enter.
+3. Pilih jenis Shell file yang akan dienskripsi (`bash`, `sh`, `zsh`, `ksh`, atau `mksh`) dan klik Enter.
 4. Lalu, pilih mode enskripsi dan klik Enter.
 5. Terakhir, masukkan nama file yang akan dienskripsi (file harus berada di folder `file`).
 6. Setelah berhasil dienskripsi, hasilnya akan disimpan di folder `out`.
