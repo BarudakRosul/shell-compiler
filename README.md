@@ -18,10 +18,11 @@
 2. [Demo](#demo)
 3. [Fitur](#fitur)
 4. [Instalasi](#instalasi)
-5. [Berkontribusi](#berkontribusi)
-6. [Lisensi](#lisensi)
-7. [Penghargaan](#penghargaan)
-8. [Catatan Perubahan](#catatan-perubahan)
+5. [Penggunaan](#penggunaan)
+6. [Berkontribusi](#berkontribusi)
+7. [Lisensi](#lisensi)
+8. [Penghargaan](#penghargaan)
+9. [Catatan Perubahan](#catatan-perubahan)
 
 ## Pendahuluan
 
@@ -85,6 +86,17 @@ Untuk menyiapkan Shell Compiler secara lokal, ikuti langkah-langkah instalasi in
    ```shell
    bash shell-compiler.sh
    ```
+
+## Penggunaan
+
+Untuk memulai menggunakan Shell Compiler untuk enkripsi file, ikuti langkah-langkah ini:
+
+1. Simpan file yang akan dienskripsi ke folder `file`.
+2. Jalankan file `shell-compiler.sh`.
+3. Pilih jenis Shell file yang akan dienskripsi (`bash`, `sh`, `zsh`, `ksh`, atau `mksh` dan klik Enter.
+4. Lalu, pilih mode enskripsi dan klik Enter.
+5. Terakhir, masukkan nama file yang akan dienskripsi (file harus berada di folder `file`).
+6. Setelah berhasil dienskripsi, hasilnya akan disimpan di folder `out`.
 
 ## Berkontribusi
 
