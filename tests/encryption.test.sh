@@ -5,8 +5,8 @@ MODE_ENC=("aes-128-cbc" "aes-192-cbc" "aes-256-cbc" "aria-128-cbc" "aria-192-cbc
 "base64" "camellia-128-cbc" "camellia-192-cbc" "camellia-256-cbc" "zlib")
 
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
-  # For zlib mode not supported in Ubuntu, we skip the check if mode is zlib
-  if [[ -f "/etc/os-release" ]] && grep -q "Ubuntu" "/etc/os-release"; then
+  # For zlib mode not supported in OpenSSL version < 3.0.2
+  if openssl version | grep -i 3.0.[0-9] >/dev/null 2>&1; then
     if [[ ${MODE_ENC[i]} == "zlib" ]]; then
       continue
     fi
