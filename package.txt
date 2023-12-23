@@ -2,3 +2,4 @@ git
 openssl
 xz-utils
 jq
+ccrypt
