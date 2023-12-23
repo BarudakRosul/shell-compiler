@@ -22,6 +22,7 @@ jobs:
         run: |
           sudo apt-get update -y && sudo apt-get upgrade -y
           sudo apt-get install $(cat package.txt) -y
+          npm -g install @barudakrosul/gcrypt
 
       - name: Check syntax code
         run: |
