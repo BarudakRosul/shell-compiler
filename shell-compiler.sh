@@ -1,8 +1,9 @@
 #!/bin/bash
 
-MODE_ENC=("aes-128-cbc" "aes-192-cbc" "aes-256-cbc" "aes-128-cbc_zlib" "aes-192-cbc_zlib" "aes-256-cbc_zlib" \
-"aria-128-cbc" "aria-192-cbc" "aria-256-cbc" "base64" "camellia-128-cbc" "camellia-192-cbc" \
-"camellia-256-cbc" "ccrypt" "des-ede" "des-ede3" "des-ede-cbc" "des-ede3-cbc" "gcrypt" "zlib")
+MODE_ENC=("aes-128-cbc" "aes-192-cbc" "aes-256-cbc" "aes-128-cbc_base64" "aes-192-cbc_base64" \
+"aes-256-cbc_base64" "aes-128-cbc_zlib" "aes-192-cbc_zlib" "aes-256-cbc_zlib" "aria-128-cbc" \
+"aria-192-cbc" "aria-256-cbc" "base64" "camellia-128-cbc" "camellia-192-cbc" "camellia-256-cbc" \
+"ccrypt" "des-ede" "des-ede3" "des-ede-cbc" "des-ede3-cbc" "gcrypt" "zlib")
 VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo null)
 
 # The [[ -t 1 ]] check only works when the function is not called from
@@ -122,8 +123,8 @@ main_menu_mode() {
     if (( 1 == ${#number} )); then
       space=" "
     fi
-    mode=$(printf "${MODE_ENC[i]}" | sed 's/_zlib/ (zlib)/')
-    echo "${RESET}${BOLD}${GREEN} ${space}$((number)). ${WHITE}${mode}${RESET}"
+    mode=$(printf "${MODE_ENC[i]}" | sed 's/_zlib/ (zlib)/' | sed 's/_base64/ (base64)/')
+    echo "${RESET}${BOLD}${GREEN} ${space}$((number)). ${WHITE}$mode${RESET}"
   done
   echo "${RESET}${BOLD}${RED}  0. Exit
 ╔═════════════════════════════════════════════════════════╗
@@ -151,11 +152,12 @@ main_menu_input_file() {
 
   clear
   banner
+  mode=$(printf "$MODE" | sed 's/_zlib/ (zlib)/' | sed 's/_base64/ (base64)/')
   echo "${RESET}${BOLD}${RED}╔═════════════════════════════════════════════════════════╗
 ║${YELLOW}      Input your file in \"file\" folder for encrypt       ${RED}║
 ╚═════════════════════════════════════════════════════════╝
 ${WHITE}  File type   : ${GREEN}${UNDERLINE}$TYPE_SHELL${RESET}${BOLD}
-${WHITE}  Encrypt mode: ${GREEN}${UNDERLINE}$MODE${RESET}${BOLD}
+${WHITE}  Encrypt mode: ${GREEN}${UNDERLINE}$mode${RESET}${BOLD}
 ${RED}╔═════════════════════════════════════════════════════════╗
 ╚═════════════════════════════════════════════════════════╝${RESET}"
   read -p "${RESET}${BOLD}${WHITE}Script ${GREEN}>>${RESET} " input
