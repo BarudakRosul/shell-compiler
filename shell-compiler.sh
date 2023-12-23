@@ -58,6 +58,10 @@ error() {
   echo "${RESET}${BOLD}${RED}Error: $@${RESET}"
 }
 
+command_exists() {
+  command -v "$@" >/dev/null 2>&1
+}
+
 banner() {
   echo "${RESET}${BOLD}${RED}╔═════════════════════════════════════════════════════════╗
 ║${YELLOW}        ┏━┓╻ ╻┏━╸╻  ╻     ┏━╸┏━┓┏┳┓┏━┓╻╻  ┏━╸┏━┓         ${RED}║
@@ -178,13 +182,20 @@ main() {
   bash lib/${MODE}.sh -t ${TYPE_SHELL} -i file/${INPUT} -o out/${INPUT}
 }
 
+setup_color
+
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
   test -f lib/${MODE_ENC[i]}.sh && test -r lib/${MODE_ENC[i]}.sh || {
-    setup_color
     error "Some files are missing!"
     info "Please install the script from github <https://github.com/BarudakRosul/shell-compiler>"
     exit 1
   }
 done
+
+command_exists openssl && command_exists ccrypt && command_exists gcrypt || {
+  error "Some programs or packages is not installed"
+  info "Please installed the programs and try again"
+  exit 127
+}
 
 main
