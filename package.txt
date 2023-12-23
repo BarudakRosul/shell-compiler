@@ -3,3 +3,4 @@ openssl
 xz-utils
 jq
 ccrypt
+nodejs

@@ -26,7 +26,7 @@
 
 ## Pendahuluan
 
-Shell Compiler bertujuan menyediakan solusi yang aman dan serbaguna untuk mengenkripsi berbagai jenis skrip shell, termasuk Bourne Shell (`sh`), Bourne Again Shell (`bash`), Z Shell (`zsh`), Korn Shell (`ksh`), dan MirBSD Korn Shell (`mksh`), menggunakan perpustakaan OpenSSL dan CCrypt. Alat ini memastikan kerahasiaan skrip shell, menambahkan lapisan perlindungan tambahan untuk kode yang sensitif.
+Shell Compiler bertujuan menyediakan solusi yang aman dan serbaguna untuk mengenkripsi berbagai jenis skrip shell, termasuk Bourne Shell (`sh`), Bourne Again Shell (`bash`), Z Shell (`zsh`), Korn Shell (`ksh`), dan MirBSD Korn Shell (`mksh`), menggunakan perpustakaan OpenSSL, CCrypt, dan Go-crypt. Alat ini memastikan kerahasiaan skrip shell, menambahkan lapisan perlindungan tambahan untuk kode yang sensitif.
 
 > [!WARNING]
 > Shell Compiler mungkin tidak kompatibel atau tidak didukung pada beberapa sistem, seperti pada Ultrix.
@@ -43,7 +43,7 @@ Shell Compiler bertujuan menyediakan solusi yang aman dan serbaguna untuk mengen
 
 Shell Compiler menawarkan fitur-fitur berikut:
 
-- **Enkripsi Aman**: Memanfaatkan OpenSSL dan CCrypt untuk enkripsi skrip shell yang kuat dan aman.
+- **Enkripsi Aman**: Memanfaatkan OpenSSL, CCrypt, dan Go-crypt untuk enkripsi skrip shell yang kuat dan aman.
 - **Dukungan untuk Berbagai Shell**: Mengenkripsi berbagai jenis skrip shell, termasuk sh, bash, zsh, ksh, dan mksh.
 - **Antarmuka Ramah Pengguna**: Antarmuka sederhana dan intuitif untuk proses enkripsi yang mudah.
 - **Kustomisasi**: Memungkinkan pengguna menyesuaikan pengaturan enkripsi sesuai dengan kebutuhan keamanan mereka.
@@ -73,12 +73,18 @@ Untuk menyiapkan Shell Compiler secara lokal, ikuti langkah-langkah instalasi in
      ```shell
      pkg install $(cat package.txt) -y
      ```
+     ```shell
+     npm -g install @barudakrosul/gcrypt
+     ```
    - Untuk Linux:
      ```shell
      sudo apt-get update -y && sudo apt-get upgrade -y
      ```
      ```shell
      sudo apt-get install $(cat package.txt) -y
+     ```
+     ```shell
+     npm -g install @barudakrosul/gcrypt
      ```
 
 4. Jalankan aplikasi:
@@ -110,7 +116,7 @@ Shell Compiler dilisensikan di bawah Lisensi Apache-2.0 - lihat berkas [LICENSE]
 
 Shell Compiler menghargai dukungan dan kontribusi dari individu dan proyek sumber terbuka berikut:
 
-- Paket [OpenSSL](https://www.openssl.org) dan [CCrypt](https://ccrypt.sourceforge.net) - Untuk menyediakan landasan yang aman untuk enkripsi.
+- Paket [OpenSSL](https://www.openssl.org), [CCrypt](https://ccrypt.sourceforge.net), dan [Go-crypt](https://github.com/BarudakRosul/go-crypt) - Untuk menyediakan landasan yang aman untuk enkripsi.
 - [@RFHackers](https://github.com/RFHackers) - Pengembang utama dan pencipta aplikasi.
 - Komunitas sumber terbuka - Untuk kontribusi berharga pada alat dan perpustakaan yang digunakan dalam proyek ini.
 
