@@ -23,5 +23,10 @@ jobs:
           sudo apt-get update -y && sudo apt-get upgrade -y
           sudo apt-get install $(cat package.txt) -y
 
+      - name: Check syntax code
+        run: |
+          bash -n shell-compiler.sh
+          bash -n tests/*
+
       - name: Testing code for encryption
         run: bash tests/encryption.test.sh
