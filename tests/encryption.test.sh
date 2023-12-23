@@ -2,7 +2,7 @@
 set -e
 
 MODE_ENC=("aes-128-cbc" "aes-192-cbc" "aes-256-cbc" "aria-128-cbc" "aria-192-cbc" "aria-256-cbc" \
-"base64" "camellia-128-cbc" "camellia-192-cbc" "camellia-256-cbc" "zlib")
+"base64" "camellia-128-cbc" "camellia-192-cbc" "camellia-256-cbc" "ccrypt" "zlib")
 
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
   # For zlib mode not supported in OpenSSL version < 3.0.2

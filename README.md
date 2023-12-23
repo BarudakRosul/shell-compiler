@@ -26,7 +26,7 @@
 
 ## Pendahuluan
 
-Shell Compiler bertujuan menyediakan solusi yang aman dan serbaguna untuk mengenkripsi berbagai jenis skrip shell, termasuk Bourne Shell (`sh`), Bourne Again Shell (`bash`), Z Shell (`zsh`), Korn Shell (`ksh`), dan MirBSD Korn Shell (`mksh`), menggunakan perpustakaan OpenSSL. Alat ini memastikan kerahasiaan skrip shell, menambahkan lapisan perlindungan tambahan untuk kode yang sensitif.
+Shell Compiler bertujuan menyediakan solusi yang aman dan serbaguna untuk mengenkripsi berbagai jenis skrip shell, termasuk Bourne Shell (`sh`), Bourne Again Shell (`bash`), Z Shell (`zsh`), Korn Shell (`ksh`), dan MirBSD Korn Shell (`mksh`), menggunakan perpustakaan OpenSSL dan CCrypt. Alat ini memastikan kerahasiaan skrip shell, menambahkan lapisan perlindungan tambahan untuk kode yang sensitif.
 
 > [!WARNING]
 > Shell Compiler mungkin tidak kompatibel atau tidak didukung pada beberapa sistem, seperti pada Ultrix.
@@ -43,7 +43,7 @@ Shell Compiler bertujuan menyediakan solusi yang aman dan serbaguna untuk mengen
 
 Shell Compiler menawarkan fitur-fitur berikut:
 
-- **Enkripsi Aman**: Memanfaatkan OpenSSL untuk enkripsi skrip shell yang kuat dan aman.
+- **Enkripsi Aman**: Memanfaatkan OpenSSL dan CCrypt untuk enkripsi skrip shell yang kuat dan aman.
 - **Dukungan untuk Berbagai Shell**: Mengenkripsi berbagai jenis skrip shell, termasuk sh, bash, zsh, ksh, dan mksh.
 - **Antarmuka Ramah Pengguna**: Antarmuka sederhana dan intuitif untuk proses enkripsi yang mudah.
 - **Kustomisasi**: Memungkinkan pengguna menyesuaikan pengaturan enkripsi sesuai dengan kebutuhan keamanan mereka.
@@ -100,7 +100,7 @@ Untuk memulai menggunakan Shell Compiler untuk enkripsi file, ikuti langkah-lang
 
 ## Berkontribusi
 
-Kontribusi pada Proyek Kompilator Shell sangat dihargai! Baik melaporkan bug, menyarankan fitur baru, atau berkontribusi pada perbaikan kode.
+Kontribusi pada Shell Compiler sangat dihargai! Baik melaporkan bug, menyarankan fitur baru, atau berkontribusi pada perbaikan kode.
 
 ## Lisensi
 
@@ -110,8 +110,8 @@ Shell Compiler dilisensikan di bawah Lisensi Apache-2.0 - lihat berkas [LICENSE]
 
 Shell Compiler menghargai dukungan dan kontribusi dari individu dan proyek sumber terbuka berikut:
 
-- [Librari OpenSSL](https://www.openssl.org) - Untuk menyediakan landasan yang aman untuk enkripsi.
-- @RFHackers - Pengembang utama dan pencipta aplikasi.
+- Paket [OpenSSL](https://www.openssl.org) dan [CCrypt](https://ccrypt.sourceforge.net) - Untuk menyediakan landasan yang aman untuk enkripsi.
+- [@RFHackers](https://github.com/RFHackers) - Pengembang utama dan pencipta aplikasi.
 - Komunitas sumber terbuka - Untuk kontribusi berharga pada alat dan perpustakaan yang digunakan dalam proyek ini.
 
 ## Catatan Perubahan
