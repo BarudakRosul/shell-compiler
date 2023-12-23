@@ -8,7 +8,7 @@ MODE_ENC=("aes-128-cbc" "aes-192-cbc" "aes-256-cbc" "aes-128-cbc_zlib" "aes-192-
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
   # For zlib mode not supported in OpenSSL version < 3.0.2
   if openssl version | grep -i 3.0.[0-9] >/dev/null 2>&1; then
-    if [[ ${MODE_ENC[i]} == "zlib" ]]; then
+    if [[ ${MODE_ENC[i]} == *"zlib" ]]; then
       continue
     fi
   fi
