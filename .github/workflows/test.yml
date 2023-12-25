@@ -19,7 +19,9 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Install package
-        run: bash install.sh
+        run: |
+          bash install.sh
+          sudo apt install zsh loksh mksh -y
 
       - name: Check version openssl and list
         run: |
