@@ -17,6 +17,8 @@ install_pkg_on_linux() {
   sudo make && sudo make install
   cd
   npm -g install @barudakrosul/gcrypt
+  openssl version
+  openssl
 }
 
 case $HOME in
