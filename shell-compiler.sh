@@ -196,9 +196,21 @@ for ((i=0;i<${#MODE_ENC[@]};i++)); do
   }
 done
 
-command_exists openssl && command_exists ccrypt && command_exists gcrypt || {
-  error "Some programs or packages is not installed"
-  info "Please installed the programs and try again"
+command_exists openssl || {
+  error "The program \`openssl' is not installed."
+  info "Please installed the program and try again."
+  exit 127
+}
+
+ command_exists ccrypt || {
+  error "The program \`ccrypt' is not installed."
+  info "Please installed the program and try again."
+  exit 127
+}
+
+ command_exists gcrypt || {
+  error "The program \`gcrypt' is not installed."
+  info "Please installed the program and try again."
   exit 127
 }
 
