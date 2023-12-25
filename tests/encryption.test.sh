@@ -7,6 +7,12 @@ MODE_ENC=("aes-128-cbc" "aes-192-cbc" "aes-256-cbc" "aes-128-cbc_base64" "aes-19
 "ccrypt" "des-ede" "des-ede3" "des-ede-cbc" "des-ede3-cbc" "gcrypt" "zlib")
 
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
+  # Skip test for using zlib mode if openssl is version 3.0.*
+  if openssl version | grep -i 3.0 >/dev/null 2>&1; then
+    if echo "${MODE_ENC[i]}" | grep -i zlib >/dev/null 2>&1; then
+      continue
+    fi
+  fi
   cat <<'EOF' > file/example-${MODE_ENC[i]}.sh
 #!/bin/bash
 echo "Hello world!"
