@@ -2,14 +2,7 @@
 
 install_pkg_on_termux() {
   pkg update -y && pkg upgrade -y
-  pkg install build-essential openssl openssl-tool zlib zlib-static git xz-utils jq ccrypt nodejs make clang perl -y
-  cd
-  wget https://www.openssl.org/source/openssl-3.2.0.tar.gz
-  tar -xf openssl-3.2.0.tar.gz
-  cd openssl-3.2.0
-  ./config --prefix=$PREFIX --openssldir=$PREFIX zlib enable-zstd zlib-dynamic enable-zstd-dynamic shared
-  make && make install
-  cd
+  pkg install git openssl-tool xz-utils jq ccrypt nodejs -y
   npm -g install @barudakrosul/gcrypt
 }
 
@@ -22,6 +15,13 @@ install_pkg_on_linux() {
   cd openssl-3.2.0
   sudo ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl zlib enable-zstd zlib-dynamic enable-zstd-dynamic shared
   sudo make && sudo make install
+  cd /etc/ld.so.conf.d/
+  echo '/usr/local/ssl/lib64' > openssl-3.2.0.conf
+  sudo ldconfig -v
+  mv /usr/bin/c_rehash /usr/bin/c_rehash.bak
+  mv /usr/bin/openssl /usr/bin/openssl.bak
+  echo 'PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/ssl/bin"' > /etc/environment
+  source /etc/environment
   cd
   npm -g install @barudakrosul/gcrypt
 }
