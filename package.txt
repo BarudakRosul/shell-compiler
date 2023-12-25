@@ -1,6 +1,0 @@
-git
-openssl-tool
-xz-utils
-jq
-ccrypt
-nodejs

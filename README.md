@@ -66,26 +66,10 @@ Untuk menyiapkan Shell Compiler secara lokal, ikuti langkah-langkah instalasi in
    ```
 
 3. Instal paket:
-   - Untuk Termux:
-     ```shell
-     pkg update -y && pkg upgrade -y
-     ```
-     ```shell
-     pkg install $(cat package.txt) -y
-     ```
-     ```shell
-     npm -g install @barudakrosul/gcrypt
-     ```
-   - Untuk Linux:
-     ```shell
-     sudo apt-get update -y && sudo apt-get upgrade -y
-     ```
-     ```shell
-     sudo apt-get install $(cat package.txt) -y
-     ```
-     ```shell
-     npm -g install @barudakrosul/gcrypt
-     ```
+
+   ```shell
+   bash install.sh
+   ```
 
 4. Jalankan aplikasi:
 
