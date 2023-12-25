@@ -13,7 +13,7 @@ install_pkg_on_linux() {
   sudo wget https://www.openssl.org/source/openssl-3.2.0.tar.gz
   sudo tar -xf openssl-3.2.0.tar.gz
   cd openssl-3.2.0
-  sudo ./config linux-elf --prefix=/usr/local/ssl --openssldir=/usr/local/ssl zlib enable-zstd zlib-dynamic enable-zstd-dynamic shared
+  sudo ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl zlib enable-zstd zlib-dynamic enable-zstd-dynamic shared
   sudo make && sudo make install
   cd
   npm -g install @barudakrosul/gcrypt
