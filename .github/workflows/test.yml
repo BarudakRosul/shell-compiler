@@ -21,6 +21,11 @@ jobs:
       - name: Install package
         run: bash install.sh
 
+      - name: Check version openssl and list
+        run: |
+          openssl version
+          openssl
+
       - name: Check syntax code
         run: |
           bash -n shell-compiler.sh
