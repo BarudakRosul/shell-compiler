@@ -10,10 +10,10 @@ install_pkg_on_linux() {
   sudo apt update -y && sudo apt upgrade -y
   sudo apt install build-essential checkinstall zlib1g-dev tar wget git xz-utils jq ccrypt nodejs make -y
   cd /usr/local/src
-  sudo wget https://www.openssl.org/source/openssl-3.1.4.tar.gz
-  sudo tar -xf openssl-3.1.4.tar.gz
-  cd openssl-3.1.4
-  sudo ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib
+  sudo wget https://www.openssl.org/source/openssl-3.2.0.tar.gz
+  sudo tar -xf openssl-3.2.0.tar.gz
+  cd openssl-3.2.0
+  sudo ./config linux-elf zlib enable-zstd zlib-dynamic enable-zstd-dynamic shared
   sudo make && sudo make install
   cd
   npm -g install @barudakrosul/gcrypt
