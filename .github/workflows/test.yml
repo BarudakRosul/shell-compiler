@@ -21,7 +21,7 @@ jobs:
       - name: Install package
         run: |
           bash install.sh
-          sudo apt install zsh loksh mksh -y
+          sudo apt install zsh ksh mksh -y
 
       - name: Check version openssl and list
         run: |
