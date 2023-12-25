@@ -1,5 +1,5 @@
 git
-openssl
+openssl-tool
 xz-utils
 jq
 ccrypt
