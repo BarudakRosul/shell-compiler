@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export NODE_OPTIONS=--openssl-legacy-provider
+
 MODE_ENC=("aes-128-cbc" "aes-192-cbc" "aes-256-cbc" "aes-128-cbc_base64" "aes-192-cbc_base64" \
 "aes-256-cbc_base64" "aes-128-cbc_zlib" "aes-192-cbc_zlib" "aes-256-cbc_zlib" "aria-128-cbc" \
 "aria-192-cbc" "aria-256-cbc" "base64" "camellia-128-cbc" "camellia-192-cbc" "camellia-256-cbc" \
@@ -196,8 +198,8 @@ for ((i=0;i<${#MODE_ENC[@]};i++)); do
   }
 done
 
-command_exists openssl || {
-  error "The program \`openssl' is not installed."
+command_exists ncssl || {
+  error "The program \`ncssl' is not installed."
   info "Please installed the program and try again."
   exit 127
 }

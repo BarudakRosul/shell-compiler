@@ -23,11 +23,6 @@ jobs:
           bash install.sh
           sudo apt install zsh ksh mksh -y
 
-      - name: Check version openssl and list
-        run: |
-          openssl version
-          openssl
-
       - name: Check syntax code
         run: |
           bash -n shell-compiler.sh

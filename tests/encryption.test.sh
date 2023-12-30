@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+export NODE_OPTIONS=--openssl-legacy-provider
+
 MODE_ENC=("aes-128-cbc" "aes-192-cbc" "aes-256-cbc" "aes-128-cbc_base64" "aes-192-cbc_base64" \
 "aes-256-cbc_base64" "aes-128-cbc_zlib" "aes-192-cbc_zlib" "aes-256-cbc_zlib" "aria-128-cbc" \
 "aria-192-cbc" "aria-256-cbc" "base64" "camellia-128-cbc" "camellia-192-cbc" "camellia-256-cbc" \
@@ -10,12 +12,6 @@ rm -rf file/* out/*
 echo "[!] Testing code for bash script file"
 
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
-  # Skip test for using zlib mode if openssl is version 3.0.*
-  if openssl version | grep -i 3.0 >/dev/null 2>&1; then
-    if echo "${MODE_ENC[i]}" | grep -i zlib >/dev/null 2>&1; then
-      continue
-    fi
-  fi
   cat <<'EOF' > file/example-${MODE_ENC[i]}.sh
 #!/bin/bash
 echo "Hello world!"
@@ -31,12 +27,6 @@ rm -rf file/* out/*
 echo "[!] Testing code for sh script file"
 
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
-  # Skip test for using zlib mode if openssl is version 3.0.*
-  if openssl version | grep -i 3.0 >/dev/null 2>&1; then
-    if echo "${MODE_ENC[i]}" | grep -i zlib >/dev/null 2>&1; then
-      continue
-    fi
-  fi
   cat <<'EOF' > file/example-${MODE_ENC[i]}.sh
 #!/bin/sh
 echo "Hello world!"
@@ -52,12 +42,6 @@ rm -rf file/* out/*
 echo "[!] Testing code for zsh script file"
 
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
-  # Skip test for using zlib mode if openssl is version 3.0.*
-  if openssl version | grep -i 3.0 >/dev/null 2>&1; then
-    if echo "${MODE_ENC[i]}" | grep -i zlib >/dev/null 2>&1; then
-      continue
-    fi
-  fi
   cat <<'EOF' > file/example-${MODE_ENC[i]}.sh
 #!/bin/zsh
 echo "Hello world!"
@@ -73,12 +57,6 @@ rm -rf file/* out/*
 echo "[!] Testing code for ksh script file"
 
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
-  # Skip test for using zlib mode if openssl is version 3.0.*
-  if openssl version | grep -i 3.0 >/dev/null 2>&1; then
-    if echo "${MODE_ENC[i]}" | grep -i zlib >/dev/null 2>&1; then
-      continue
-    fi
-  fi
   cat <<'EOF' > file/example-${MODE_ENC[i]}.sh
 #!/bin/ksh
 echo "Hello world!"
@@ -94,12 +72,6 @@ rm -rf file/* out/*
 echo "[!] Testing code for mksh script file"
 
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
-  # Skip test for using zlib mode if openssl is version 3.0.*
-  if openssl version | grep -i 3.0 >/dev/null 2>&1; then
-    if echo "${MODE_ENC[i]}" | grep -i zlib >/dev/null 2>&1; then
-      continue
-    fi
-  fi
   cat <<'EOF' > file/example-${MODE_ENC[i]}.sh
 #!/bin/bash
 echo "Hello world!"
