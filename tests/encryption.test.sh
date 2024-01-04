@@ -74,7 +74,7 @@ echo "[!] Testing code for mksh script file"
 
 for ((i=0;i<${#MODE_ENC[@]};i++)); do
   cat <<'EOF' > file/example-${MODE_ENC[i]}.sh
-#!/bin/bash
+#!/bin/mksh
 echo "Hello world!"
 EOF
   echo "> Check encryption with mode ${MODE_ENC[i]}"
